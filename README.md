@@ -10,24 +10,30 @@ exposed as ROS2 parameters that can be modified from a launch file.
 
 ## QuickStart
 
+Pre-build (Zoe)
+
+1. Set up permissions for access to /dev/ttyUSB* devices (change username from zoe2 as needed): `sudo adduser zoe2 dialout`
+2. Restart computer
+3. Check setup (change baud rate and port as needed): `picocom -b 921600 /dev/ttyUSB0`
+
 Build
 
-1. git clone https://github.com/dawonn/vectornav.git -b ros2
-2. cd vectornav 
-3. colcon build
+4. `git clone https://github.com/PlanetaryRobotics/vectornav.git -b ros2`
+5. `cd vectornav` 
+6. `colcon build`
 
 Run with ros2 run (Option 1)
 
-4. (Terminal 1) ros2 run vectornav vectornav
-5. (Terminal 2) ros2 topic echo /vectornav/raw/common
-6. (Terminal 3) ros2 run vectornav vn_sensor_msgs
-7. (Terminal 4) ros2 topic echo /vectornav/imu
+7. (Terminal 1) `ros2 run vectornav vectornav`
+8. (Terminal 2) `ros2 topic echo /vectornav/raw/common`
+9. (Terminal 3) `ros2 run vectornav vn_sensor_msgs`
+10. (Terminal 4) `ros2 topic echo /vectornav/imu`
 
 Run with ros2 launch (Option 2, uses parameters from `vectornav.yaml`)
 
-8. (Terminal 1) ros2 launch vectornav vectornav.launch.py
-9. (Terminal 2) ros2 topic echo /vectornav/raw/common
-10. (Terminal 3) ros2 topic echo /vectornav/imu
+11. (Terminal 1) `ros2 launch vectornav vectornav.launch.py`
+12. (Terminal 2) `ros2 topic echo /vectornav/raw/common`
+13. (Terminal 3) `ros2 topic echo /vectornav/imu`
 
 ## vectornav node
 
